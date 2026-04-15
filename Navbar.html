@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="border-radius: 8px; margin-bottom: 30px;">
+  <div class="container-fluid">
+    <a class="navbar-brand text-primary fw-bold" href="#" onclick="showPage('home')" style="font-size: 1.1rem;">
+      <i class="fa-solid fa-graduation-cap me-2"></i>Tuyển sinh 2026
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" id="nav-home" href="#" onclick="showPage('home')"><i class="fa-solid fa-pen-to-square me-1"></i>Đăng ký</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="nav-about" href="#" onclick="showPage('about')"><i class="fa-solid fa-circle-info me-1"></i>Giới thiệu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="nav-plan" href="#" onclick="showPage('plan')"><i class="fa-regular fa-calendar-check me-1"></i>Kế hoạch</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="nav-policy" href="#" onclick="showPage('policy')"><i class="fa-solid fa-shield-halved me-1"></i>Chính sách</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .nav-link.active {
+    font-weight: bold;
+    color: #03a9f4 !important;
+  }
+</style>
+
+<script>
+  function showPage(pageId) {
+    // Hide all pages
+    const pages = document.querySelectorAll('.page-content');
+    pages.forEach(page => page.style.display = 'none');
+
+    // Remove active class from all nav links
+    const links = document.querySelectorAll('.nav-link');
+    links.forEach(link => link.classList.remove('active'));
+
+    // Show selected page
+    document.getElementById('page-' + pageId).style.display = 'block';
+
+    // Add active class to selected nav link
+    document.getElementById('nav-' + pageId).classList.add('active');
+  }
+</script>

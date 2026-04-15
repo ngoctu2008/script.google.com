@@ -2,10 +2,15 @@ const SHEET_ID = 'ĐIỀN_SHEET_ID_CỦA_BẠN_VÀO_ĐÂY';
 const FOLDER_ID = 'ĐIỀN_FOLDER_ID_CỦA_BẠN_VÀO_ĐÂY';
 
 function doGet(e) {
-  return HtmlService.createHtmlOutputFromFile('Index')
+  return HtmlService.createTemplateFromFile('Index')
+    .evaluate()
     .setTitle('Đăng ký tuyển sinh Trung tâm GDNN-GDTX Đăk Tô')
     .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL)
     .addMetaTag('viewport', 'width=device-width, initial-scale=1');
+}
+
+function include(filename) {
+  return HtmlService.createHtmlOutputFromFile(filename).getContent();
 }
 
 function processForm(formObject) {

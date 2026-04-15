@@ -19,9 +19,14 @@ Chào bạn, đây là hướng dẫn chi tiết để bạn triển khai trang 
    const FOLDER_ID = 'ĐIỀN_FOLDER_ID_CỦA_BẠN_VÀO_ĐÂY';
    ```
    **Thay thế** hai dòng chữ trên bằng ID Sheets và ID Folder bạn đã copy ở Bước 1.
-5. Tiếp theo, tạo một file HTML mới: Nhấn vào biểu tượng dấu cộng `+` bên cạnh phần "Tệp" (Files) -> Chọn **HTML**.
-6. Đặt tên file bắt buộc là **Index** (chữ I viết hoa).
-7. Xóa mã HTML có sẵn, sau đó **copy toàn bộ nội dung của file `Index.html`** dán vào đó.
+5. Tiếp theo, tạo các file HTML: Nhấn vào biểu tượng dấu cộng `+` bên cạnh phần "Tệp" (Files) -> Chọn **HTML**.
+6. Bạn cần tạo tổng cộng **5 file HTML** với tên chính xác (chữ cái đầu viết hoa) như sau:
+   - `Index` (sau khi tạo, copy nội dung file `Index.html` dán vào)
+   - `Navbar` (copy nội dung `Navbar.html` dán vào)
+   - `About` (copy nội dung `About.html` dán vào)
+   - `Plan` (copy nội dung `Plan.html` dán vào)
+   - `Policy` (copy nội dung `Policy.html` dán vào)
+7. Đảm bảo bạn xóa trắng mã HTML mặc định của Google trước khi dán mã nguồn vào từng file.
 8. Nhấn nút **Lưu (Save)** biểu tượng đĩa mềm.
 
 ## Bước 3: Triển khai thành Trang Web (Deploy)
