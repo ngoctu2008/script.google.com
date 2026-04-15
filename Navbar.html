@@ -1,51 +1,60 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="border-radius: 8px; margin-bottom: 30px;">
-  <div class="container-fluid">
-    <a class="navbar-brand text-primary fw-bold" href="javascript:void(0);" onclick="showPage('home')" style="font-size: 1.1rem;">
-      <i class="fa-solid fa-graduation-cap me-2"></i>Tuyển sinh 2026
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link active" id="nav-home" href="javascript:void(0);" onclick="showPage('home')"><i class="fa-solid fa-pen-to-square me-1"></i>Đăng ký</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="nav-about" href="javascript:void(0);" onclick="showPage('about')"><i class="fa-solid fa-circle-info me-1"></i>Giới thiệu</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="nav-plan" href="javascript:void(0);" onclick="showPage('plan')"><i class="fa-regular fa-calendar-check me-1"></i>Kế hoạch</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="nav-policy" href="javascript:void(0);" onclick="showPage('policy')"><i class="fa-solid fa-shield-halved me-1"></i>Chính sách</a>
-        </li>
-      </ul>
-    </div>
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f8f9fa; border-radius: 8px; margin-bottom: 30px; box-shadow: inset 0 0 5px rgba(0,0,0,0.05);">
+  <div class="container-fluid justify-content-center">
+    <ul class="navbar-nav flex-row flex-wrap justify-content-center gap-3 w-100">
+      <li class="nav-item">
+        <a class="nav-link active px-3 py-2" id="nav-home" href="javascript:void(0);" onclick="showPage('home')"><i class="fa-solid fa-pen-to-square me-1"></i> Đăng ký</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link px-3 py-2" id="nav-about" href="javascript:void(0);" onclick="showPage('about')"><i class="fa-solid fa-circle-info me-1"></i> Giới thiệu</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link px-3 py-2" id="nav-plan" href="javascript:void(0);" onclick="showPage('plan')"><i class="fa-regular fa-calendar-check me-1"></i> Kế hoạch</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link px-3 py-2" id="nav-policy" href="javascript:void(0);" onclick="showPage('policy')"><i class="fa-solid fa-shield-halved me-1"></i> Chính sách</a>
+      </li>
+    </ul>
   </div>
 </nav>
 
 <style>
-  .nav-link.active {
+  .navbar-nav .nav-link {
+    color: #555;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+  }
+  .navbar-nav .nav-link:hover {
+    background-color: #e9ecef;
+    color: #03a9f4;
+  }
+  .navbar-nav .nav-link.active {
     font-weight: bold;
     color: #03a9f4 !important;
+    background-color: #e1f5fe;
   }
 </style>
 
 <script>
   function showPage(pageId) {
-    // Hide all pages
     const pages = document.querySelectorAll('.page-content');
-    pages.forEach(page => page.style.display = 'none');
+    pages.forEach(page => {
+      page.style.display = 'none';
+      page.classList.remove('fade-in');
+    });
 
-    // Remove active class from all nav links
     const links = document.querySelectorAll('.nav-link');
     links.forEach(link => link.classList.remove('active'));
 
-    // Show selected page
-    document.getElementById('page-' + pageId).style.display = 'block';
+    const targetPage = document.getElementById('page-' + pageId);
+    targetPage.style.display = 'block';
 
-    // Add active class to selected nav link
+    // Slight delay to trigger animation
+    setTimeout(() => {
+        targetPage.classList.add('fade-in');
+    }, 10);
+
     document.getElementById('nav-' + pageId).classList.add('active');
   }
 </script>
