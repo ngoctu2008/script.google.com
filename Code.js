@@ -21,7 +21,7 @@ function processForm(formObject) {
     // Nếu sheet trống, tạo header
     if (sheet.getLastRow() === 0) {
       const headers = [
-        "Thời gian", "Họ và tên", "Ngày sinh", "Giới tính", "Nơi sinh", "Dân tộc", "Tôn giáo",
+        "Thời gian", "Mã học sinh", "Họ và tên", "Ngày sinh", "Giới tính", "Nơi sinh", "Dân tộc", "Tôn giáo",
         "Hộ khẩu thường trú", "Chỗ ở hiện tại", "Số CCCD", "Ngày cấp", "Nơi cấp",
         "Năm TN THCS", "Trường TN THCS", "Điện thoại", "Lớp dự tuyển",
         "File: Giấy khai sinh", "File: CCCD", "File: Bằng TN/Giấy CN", "File: Học bạ THCS",
@@ -64,6 +64,7 @@ function processForm(formObject) {
     // Dữ liệu lưu vào sheet
     const rowData = [
       timestamp,
+      formObject.studentId,
       formObject.fullName,
       formObject.dob,
       formObject.gender,

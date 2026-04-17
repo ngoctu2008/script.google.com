@@ -143,10 +143,20 @@
   <div id="page-home" class="page-content">
     <form id="admissionForm">
 
-    <!-- Tên -->
-    <div class="input-group">
-      <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
-      <input type="text" class="form-control" id="fullName" name="fullName" required placeholder="Họ và Tên đầy đủ (viết chữ in HOA) *" oninput="this.value = this.value.toUpperCase()">
+    <!-- Tên và Mã học sinh -->
+    <div class="row">
+      <div class="col-md-8">
+        <div class="input-group">
+          <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
+          <input type="text" class="form-control" id="fullName" name="fullName" required placeholder="Họ và Tên đầy đủ (viết chữ in HOA) *" oninput="this.value = this.value.toUpperCase()">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="input-group">
+          <span class="input-group-text"><i class="fa-solid fa-hashtag"></i></span>
+          <input type="number" class="form-control" id="studentId" name="studentId" required placeholder="Mã học sinh *">
+        </div>
+      </div>
     </div>
 
     <!-- Ngày sinh & Giới tính -->
@@ -408,6 +418,7 @@
 
       // Form Object
       const formData = {
+        studentId: document.getElementById('studentId').value,
         fullName: document.getElementById('fullName').value,
         dob: document.getElementById('dob').value,
         gender: document.getElementById('gender').value,
